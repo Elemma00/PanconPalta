@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3mhsy021dqog"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_xuxkm"]
-[ext_resource type="Texture2D" uid="uid://sv7732826w0b" path="res://assets/Meow Knight/Meow-Knight_Idle.png" id="2_joyco"]
+[ext_resource type="Texture2D" uid="uid://cfv7fry010dml" path="res://assets/Dinos/DinoSprites - doux.png" id="2_kj8ri"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2jkn"]
 radius = 4.0
@@ -10,10 +10,10 @@ height = 12.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xuxkm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_s2jkn")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3)
-texture = ExtResource("2_joyco")
-vframes = 6
+texture = ExtResource("2_kj8ri")
+hframes = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_s2jkn")
