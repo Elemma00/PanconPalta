@@ -1,11 +1,96 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3mhsy021dqog"]
+[gd_scene load_steps=13 format=3 uid="uid://b3mhsy021dqog"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_xuxkm"]
 [ext_resource type="Texture2D" uid="uid://cfv7fry010dml" path="res://assets/Dinos/DinoSprites - doux.png" id="2_kj8ri"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2jkn"]
 radius = 4.0
-height = 12.0
+height = 16.0
+
+[sub_resource type="Animation" id="Animation_c4cy2"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_kj8ri")]
+}
+
+[sub_resource type="Animation" id="Animation_vqg1u"]
+resource_name = "walk"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_kj8ri")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sb8iu"]
+_data = {
+"idle": SubResource("Animation_c4cy2"),
+"walk": SubResource("Animation_vqg1u")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6s84e"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7jct7"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vh48k"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xm0g5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ghnqb"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_q1y2m"]
+states/idle/node = SubResource("AnimationNodeAnimation_6s84e")
+states/idle/position = Vector2(364, 100)
+states/walk/node = SubResource("AnimationNodeAnimation_7jct7")
+states/walk/position = Vector2(689, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_vh48k"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xm0g5"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ghnqb")]
+graph_offset = Vector2(-25, -19)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xuxkm")
@@ -14,6 +99,17 @@ script = ExtResource("1_xuxkm")
 position = Vector2(0, 3)
 texture = ExtResource("2_kj8ri")
 hframes = 24
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_s2jkn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sb8iu")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_q1y2m")
+anim_player = NodePath("../AnimationPlayer")

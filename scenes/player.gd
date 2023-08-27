@@ -1,10 +1,18 @@
 class_name Player
 extends CharacterBody2D
 
-var max_speed = 200
-var jump_speed = 200
-var acceleration = 1000
-var gravity = 400
+var max_speed = 100
+var jump_speed = 500
+var acceleration = 3000
+var gravity = 1000
+
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var playback = animation_tree.get("parameters/playback")
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+
+func _ready() -> void:
+	animation_tree.active = true
 
 
 func _physics_process(delta: float) -> void:
@@ -19,6 +27,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, max_speed * move_input, acceleration * delta)
 		move_and_slide()
 		send_info.rpc(global_position)
+		
+		# Animation
+		if velocity.x != 0:
+			sprite_2d.scale.x = sign(velocity.x)
+		
+		if is_on_floor():
+			if abs(velocity.x) > 10 or move_input:
+				playback.travel("walk")
+			else:
+				playback.travel("idle")
+		
 #	else:
 #		pass
 
