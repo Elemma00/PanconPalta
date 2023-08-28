@@ -34,7 +34,7 @@ text = "Name:
 [node name="User" type="LineEdit" parent="PanelContainer/Menus/StartMenu"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Player"
+placeholder_text = "Nick"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Menus/StartMenu"]
 layout_mode = 2
