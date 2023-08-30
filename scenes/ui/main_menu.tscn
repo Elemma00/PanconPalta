@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8v3csej56ufk"]
+[gd_scene load_steps=4 format=3 uid="uid://c8v3csej56ufk"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_2dx2y"]
+[ext_resource type="PackedScene" uid="uid://bslhrv3eo36wd" path="res://scenes/lobby.tscn" id="2_fk1bs"]
 
 [sub_resource type="Theme" id="Theme_xctbh"]
 MarginContainer/constants/margin_bottom = 12
@@ -10,8 +13,14 @@ MarginContainer/constants/margin_top = 12
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -8.5
+offset_right = -1.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2dx2y")
+lobby_scene = ExtResource("2_fk1bs")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(100, 0)
@@ -26,24 +35,32 @@ theme = SubResource("Theme_xctbh")
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Nombre" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"BigLabel"
+theme_override_colors/font_color = Color(0.356863, 0.607843, 0.309804, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "PanConPalta"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Start"
+text = "Play"
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Credits"
+text = "Credits
+"
 
-[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
 
-[node name="Button4" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
