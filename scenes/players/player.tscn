@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b3mhsy021dqog"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_xuxkm"]
-[ext_resource type="Texture2D" uid="uid://cfv7fry010dml" path="res://assets/Dinos/DinoSprites - doux.png" id="2_kj8ri"]
+[ext_resource type="Script" path="res://scenes/players/player.gd" id="1_60vud"]
+[ext_resource type="Texture2D" uid="uid://cfv7fry010dml" path="res://assets/Dinos/DinoSprites - doux.png" id="2_2pqqi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2jkn"]
 radius = 4.0
@@ -23,18 +23,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 2, 1]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_kj8ri")]
-}
 
 [sub_resource type="Animation" id="Animation_vqg1u"]
 resource_name = "walk"
@@ -51,18 +39,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [4, 5, 6, 7, 8, 9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_kj8ri")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sb8iu"]
@@ -93,11 +69,11 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-25, -19)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_xuxkm")
+script = ExtResource("1_60vud")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3)
-texture = ExtResource("2_kj8ri")
+texture = ExtResource("2_2pqqi")
 hframes = 24
 frame = 4
 
