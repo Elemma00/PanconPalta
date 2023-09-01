@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="2_e1311"]
-[ext_resource type="PackedScene" uid="uid://duc5yompaf61l" path="res://scenes/box.tscn" id="3_cvene"]
 [ext_resource type="PackedScene" uid="uid://sso6n6w6xpfe" path="res://scenes/players/playerA.tscn" id="3_w3dqp"]
 [ext_resource type="PackedScene" uid="uid://btwdh7rmfxu5w" path="res://scenes/players/playerB.tscn" id="4_q5353"]
+[ext_resource type="PackedScene" uid="uid://dp7ggcb5wrfa2" path="res://scenes/levels/base_level.tscn" id="5_rw1xx"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")
@@ -14,14 +14,12 @@ playerB = ExtResource("4_q5353")
 
 [node name="Players" type="Node2D" parent="."]
 
-[node name="Box" parent="." instance=ExtResource("3_cvene")]
-position = Vector2(123, 139)
-scale = Vector2(10.996, 0.171859)
+[node name="base_level" parent="." instance=ExtResource("5_rw1xx")]
 
 [node name="Spawn" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Spawn"]
-position = Vector2(39, 89)
+position = Vector2(18, 71)
 
 [node name="Marker2D2" type="Marker2D" parent="Spawn"]
-position = Vector2(210, 95)
+position = Vector2(239, 72)

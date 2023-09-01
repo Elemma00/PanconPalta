@@ -1,10 +1,10 @@
 class_name Player
 extends CharacterBody2D
 
-var max_speed = 100
-var jump_speed = 300
+var max_speed = 80
+var jump_speed = 250
 var acceleration = 3000
-var gravity = 1000
+var gravity = 900
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
