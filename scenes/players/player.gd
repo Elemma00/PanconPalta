@@ -24,8 +24,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	
 	if is_multiplayer_authority():
+		var dash_input= Input.is_action_just_pressed("Dash")
 		var move_input = Input.get_axis("move_left", "move_right")
-		
+		if(velocity.x != 0) and dash_input:
+			dash()
 		if is_on_floor():
 			if jumps != 0:
 				jumps = 0
