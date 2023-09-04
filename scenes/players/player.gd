@@ -5,6 +5,8 @@ var max_speed = 80
 var jump_speed = 250
 var acceleration = 3000
 var gravity = 900
+@export var max_jump = 1
+var jumps = 0
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
@@ -22,7 +24,16 @@ func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
 		var move_input = Input.get_axis("move_left", "move_right")
 		
-		if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			if jumps != 0:
+				jumps = 0
+			if abs(velocity.x) > 10 or move_input:
+				playback.travel("walk")
+			else:
+				playback.travel("idle")
+				
+		if Input.is_action_just_pressed("jump") and jumps < max_jump:
+			jumps += 1
 			jump.rpc()
 	
 		velocity.x = move_toward(velocity.x, max_speed * move_input, acceleration * delta)
@@ -32,11 +43,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.x != 0:
 			sign_sprite.rpc()
 		
-		if is_on_floor():
-			if abs(velocity.x) > 10 or move_input:
-				playback.travel("walk")
-			else:
-				playback.travel("idle")
+
 		
 		
 	#movemos el move and slide afuera para poder simular los movimientos
@@ -71,8 +78,6 @@ func setup(player_data: Game.PlayerData):
 	name = str(player_data.id)
 	Debug.dprint(player_data.name, 30)
 	Debug.dprint(player_data.role, 30)
-
-
 
 @rpc
 func test():

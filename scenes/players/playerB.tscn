@@ -9,4 +9,3 @@ load_path = "res://.godot/imported/DinoSprites - doux.png-fed2a44b7d8d5a65c7f5d4
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_dl66w")
-frame = 0

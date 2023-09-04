@@ -6,7 +6,7 @@
 load_path = "res://.godot/imported/DinoSprites - mort.png-4b7f1dde8b81ef1aa158a4e50a2b38d6.ctex"
 
 [node name="Player" instance=ExtResource("1_pbfeb")]
+max_jump = 2
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_3bcsj")
-frame = 0
