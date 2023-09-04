@@ -7,6 +7,8 @@ var acceleration = 3000
 var gravity = 900
 @export var max_jump = 1
 var jumps = 0
+var isDashing= false
+var canDash=false
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
@@ -73,13 +75,27 @@ func sign_sprite():
 func jump():
 	velocity.y = -jump_speed
 
+func dash():
+	if canDash:
+		$Timer.start()
+		canDash=false
+		while($Timer.time_left > 0.25):
+			velocity.y=0
+			velocity.x= (velocity.x/abs(velocity.x)) * 200
+		
 func setup(player_data: Game.PlayerData):
 	set_multiplayer_authority(player_data.id)
 	name = str(player_data.id)
 	Debug.dprint(player_data.name, 30)
 	Debug.dprint(player_data.role, 30)
+	if player_data.role == Game.Role.ROLE_B:
+		canDash=true
 
 @rpc
 func test():
 #	if is_multiplayer_authority():
 	Debug.dprint("test - player: %s" % name, 30)
+
+
+func _on_timer_timeout():
+	canDash=true
