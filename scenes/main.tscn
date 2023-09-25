@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=7 format=3 uid="uid://b5hufqs7sbm01"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="2_e1311"]
 [ext_resource type="PackedScene" uid="uid://sso6n6w6xpfe" path="res://scenes/players/playerA.tscn" id="3_w3dqp"]
 [ext_resource type="PackedScene" uid="uid://btwdh7rmfxu5w" path="res://scenes/players/playerB.tscn" id="4_q5353"]
+[ext_resource type="Texture2D" uid="uid://dtqjn1q5soj85" path="res://assets/Pixel Adventure/Background/Gray.png" id="5_cc15p"]
 [ext_resource type="PackedScene" uid="uid://dp7ggcb5wrfa2" path="res://scenes/levels/base_level.tscn" id="5_rw1xx"]
 
 [node name="Main" type="Node2D"]
@@ -11,6 +12,12 @@ script = ExtResource("1_ysfbh")
 player_scene = ExtResource("2_e1311")
 playerA = ExtResource("3_w3dqp")
 playerB = ExtResource("4_q5353")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("5_cc15p")
+stretch_mode = 1
 
 [node name="Players" type="Node2D" parent="."]
 

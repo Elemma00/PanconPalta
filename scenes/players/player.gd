@@ -7,8 +7,8 @@ var acceleration = 3000
 var gravity = 900
 @export var max_jump = 1
 var jumps = 0
-var isDashing= false
-var canDash=false
+var isDashing = false
+var canDash = false
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
@@ -26,15 +26,19 @@ func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
 		var dash_input= Input.is_action_just_pressed("Dash")
 		var move_input = Input.get_axis("move_left", "move_right")
+		
 		if(velocity.x != 0) and dash_input:
-			dash()
+			dash.rpc()
+		if isDashing and $Timer.time_left > 0.1:
+				velocity.y = 0
+				velocity.x = (velocity.x/abs(velocity.x)) * 200
 		if is_on_floor():
 			if jumps != 0:
 				jumps = 0
 			if abs(velocity.x) > 10 or move_input:
-				playback.travel("walk")
+				walk_animation.rpc()
 			else:
-				playback.travel("idle")
+				idle_animation.rpc()
 				
 		if Input.is_action_just_pressed("jump") and jumps < max_jump:
 			jumps += 1
@@ -46,10 +50,7 @@ func _physics_process(delta: float) -> void:
 		# Animation
 		if velocity.x != 0:
 			sign_sprite.rpc()
-		
-
-		
-		
+			
 	#movemos el move and slide afuera para poder simular los movimientos
 	#tanto en el servidor como en un cliente
 	move_and_slide()
@@ -76,14 +77,21 @@ func sign_sprite():
 @rpc("call_local","reliable")
 func jump():
 	velocity.y = -jump_speed
+	
+@rpc("call_local","reliable")
+func walk_animation():
+	playback.travel("walk")
+	
+@rpc("call_local","reliable")
+func idle_animation():
+	playback.travel("idle")
 
+@rpc("call_local","reliable")
 func dash():
 	if canDash:
 		$Timer.start()
-		canDash=false
-		while($Timer.time_left > 0.25):
-			velocity.y=0
-			velocity.x= (velocity.x/abs(velocity.x)) * 200
+		canDash = false
+		isDashing = true
 		
 func setup(player_data: Game.PlayerData):
 	set_multiplayer_authority(player_data.id)
