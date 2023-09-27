@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkqw0rr825ulp"]
+
+[ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_eotdp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n5kuf"]
+load_path = "res://.godot/imported/DinoSprites - vita.png-171363516da8b6391b657e0d82af12ff.ctex"
+
+[node name="Player" instance=ExtResource("1_eotdp")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("CompressedTexture2D_n5kuf")

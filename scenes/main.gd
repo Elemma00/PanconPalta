@@ -1,8 +1,9 @@
 extends Node2D
 
-@export var player_scene: PackedScene
 @export var playerA: PackedScene
 @export var playerB: PackedScene
+@export var playerC: PackedScene
+@export var playerD: PackedScene
 @onready var players: Node2D = $Players
 @onready var spawn: Node2D = $Spawn
 
@@ -25,8 +26,18 @@ func _ready() -> void:
 			players.add_child(player)
 			player.setup(player_data)
 			player.global_position = spawn.get_child(i).global_position
+			
+		elif(player_data.role == Game.Role.ROLE_C):
+			var player = playerC.instantiate()
+			players.add_child(player)
+			player.setup(player_data)
+			player.global_position = spawn.get_child(i).global_position
 		
-	
+		elif(player_data.role == Game.Role.ROLE_D):
+			var player = playerD.instantiate()
+			players.add_child(player)
+			player.setup(player_data)
+			player.global_position = spawn.get_child(i).global_position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

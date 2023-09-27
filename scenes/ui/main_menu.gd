@@ -6,7 +6,6 @@ func _on_start_pressed():
 	get_tree().change_scene_to_packed(lobby_scene)
 	
 
-
 func _on_credits_pressed():
 	pass # Replace with function body.
 

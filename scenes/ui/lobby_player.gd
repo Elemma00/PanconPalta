@@ -38,9 +38,13 @@ func _set_player_role(value: Game.Role) -> void:
 	player_role.visible = value != Game.Role.NONE
 	match value:
 		Game.Role.ROLE_A:
-			player_role.text = "Role A"
+			player_role.text = "Doble Salto"
 		Game.Role.ROLE_B:
-			player_role.text = "Role B"
+			player_role.text = "Dash"
+		Game.Role.ROLE_C:
+			player_role.text = "Fuerza"
+		Game.Role.ROLE_D:
+			player_role.text = "Cuerda"
 
 
 func set_ready(value: bool) -> void:

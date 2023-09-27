@@ -1,17 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=8 format=3 uid="uid://b5hufqs7sbm01"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
-[ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="2_e1311"]
 [ext_resource type="PackedScene" uid="uid://sso6n6w6xpfe" path="res://scenes/players/playerA.tscn" id="3_w3dqp"]
 [ext_resource type="PackedScene" uid="uid://btwdh7rmfxu5w" path="res://scenes/players/playerB.tscn" id="4_q5353"]
+[ext_resource type="PackedScene" uid="uid://dxs3okw5opytd" path="res://scenes/players/playerC.tscn" id="4_s6r5e"]
+[ext_resource type="PackedScene" uid="uid://bkqw0rr825ulp" path="res://scenes/players/playerD.tscn" id="5_0o2yn"]
 [ext_resource type="Texture2D" uid="uid://dtqjn1q5soj85" path="res://assets/Pixel Adventure/Background/Gray.png" id="5_cc15p"]
 [ext_resource type="PackedScene" uid="uid://dp7ggcb5wrfa2" path="res://scenes/levels/base_level.tscn" id="5_rw1xx"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")
-player_scene = ExtResource("2_e1311")
 playerA = ExtResource("3_w3dqp")
 playerB = ExtResource("4_q5353")
+playerC = ExtResource("4_s6r5e")
+playerD = ExtResource("5_0o2yn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 256.0
@@ -30,3 +32,9 @@ position = Vector2(18, 71)
 
 [node name="Marker2D2" type="Marker2D" parent="Spawn"]
 position = Vector2(239, 72)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawn"]
+position = Vector2(157, 73)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawn"]
+position = Vector2(88, 47)
