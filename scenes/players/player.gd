@@ -7,6 +7,9 @@ var acceleration = 3000
 var gravity = 900
 @export var max_jump = 1
 var jumps = 0
+
+
+var lastDir = 1
 var isDashing = false
 var canDash = false
 
@@ -26,12 +29,20 @@ func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
 		var dash_input= Input.is_action_just_pressed("Dash")
 		var move_input = Input.get_axis("move_left", "move_right")
-		
-		if(velocity.x != 0) and dash_input:
+				
+		if isDashing==false:
+			if Input.is_action_just_pressed("move_left"):
+				lastDir=-1
+			if Input.is_action_just_pressed("move_right"):
+				lastDir=1
+			
+		if dash_input:
 			dash.rpc()
+			
 		if isDashing and $Timer.time_left > 0.1:
 				velocity.y = 0
-				velocity.x = (velocity.x/abs(velocity.x)) * 200
+				velocity.x = lastDir * 500
+				
 		if is_on_floor():
 			if jumps != 0:
 				jumps = 0
@@ -98,7 +109,7 @@ func setup(player_data: Game.PlayerData):
 	name = str(player_data.id)
 	Debug.dprint(player_data.name, 30)
 	Debug.dprint(player_data.role, 30)
-	if player_data.role == Game.Role.ROLE_B:
+	if(player_data.role== Game.Role.ROLE_B):
 		canDash=true
 
 @rpc
