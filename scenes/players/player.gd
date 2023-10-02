@@ -61,6 +61,9 @@ func _physics_process(delta: float) -> void:
 		# Animation
 		if velocity.x != 0:
 			sign_sprite.rpc()
+		
+		if Input.is_action_just_pressed("skill"):
+			skill()
 			
 	#movemos el move and slide afuera para poder simular los movimientos
 	#tanto en el servidor como en un cliente
@@ -116,6 +119,10 @@ func setup(player_data: Game.PlayerData):
 func test():
 #	if is_multiplayer_authority():
 	Debug.dprint("test - player: %s" % name, 30)
+
+func skill():
+	Debug.dprint("Player Skill")
+	
 
 
 func _on_timer_timeout():

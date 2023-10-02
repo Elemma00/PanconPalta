@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://sso6n6w6xpfe"]
+[gd_scene load_steps=4 format=3 uid="uid://sso6n6w6xpfe"]
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_pbfeb"]
+[ext_resource type="Script" path="res://scenes/players/playerA.gd" id="2_s02ye"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3bcsj"]
 load_path = "res://.godot/imported/DinoSprites - mort.png-4b7f1dde8b81ef1aa158a4e50a2b38d6.ctex"
 
 [node name="Player" instance=ExtResource("1_pbfeb")]
+script = ExtResource("2_s02ye")
 max_jump = 2
 
 [node name="Sprite2D" parent="." index="0"]
