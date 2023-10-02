@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxs3okw5opytd"]
+[gd_scene load_steps=4 format=3 uid="uid://dxs3okw5opytd"]
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_21bhx"]
+[ext_resource type="Script" path="res://scenes/players/playerC.gd" id="2_ogs32"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcfwt"]
 load_path = "res://.godot/imported/DinoSprites - tard.png-c4ef7fb11e3bc95260cf761e719d8d3c.ctex"
 
 [node name="Player" instance=ExtResource("1_21bhx")]
+script = ExtResource("2_ogs32")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_pcfwt")
