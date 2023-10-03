@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://drx82vd4ygite"]
+
+[ext_resource type="Script" path="res://scripts/objects/caja_1.gd" id="1_djlld"]
+[ext_resource type="Texture2D" uid="uid://behgt85d8ppcr" path="res://assets/Pixel Adventure/Items/Boxes/Box3/Idle.png" id="2_iql8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_168wb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5108r"]
+size = Vector2(24, 24)
+
+[node name="Caja1" type="RigidBody2D" groups=["objects"]]
+gravity_scale = 0.2
+lock_rotation = true
+script = ExtResource("1_djlld")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_iql8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_168wb")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5108r")

@@ -68,7 +68,7 @@ states/walk/position = Vector2(689, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_vh48k"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xm0g5"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ghnqb")]
 graph_offset = Vector2(-25, -19)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["players"]]
 script = ExtResource("1_60vud")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

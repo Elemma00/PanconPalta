@@ -7,16 +7,17 @@ var acceleration = 3000
 var gravity = 900
 @export var max_jump = 1
 var jumps = 0
+var direction = 1
 
 
 var lastDir = 1
 var isDashing = false
 var canDash = false
+var canPick = false
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
 
 func _ready() -> void:
 	animation_tree.active = true
@@ -33,8 +34,10 @@ func _physics_process(delta: float) -> void:
 		if isDashing==false:
 			if Input.is_action_just_pressed("move_left"):
 				lastDir=-1
+				sign_drop.rpc()
 			if Input.is_action_just_pressed("move_right"):
 				lastDir=1
+				sign_drop.rpc()
 			
 		if dash_input:
 			dash.rpc()
@@ -61,6 +64,8 @@ func _physics_process(delta: float) -> void:
 		# Animation
 		if velocity.x != 0:
 			sign_sprite.rpc()
+			
+			
 		
 		if Input.is_action_just_pressed("skill"):
 			skill.rpc()
@@ -68,12 +73,6 @@ func _physics_process(delta: float) -> void:
 	#movemos el move and slide afuera para poder simular los movimientos
 	#tanto en el servidor como en un cliente
 	move_and_slide()
-
-
-func _input(event: InputEvent) -> void:
-	if is_multiplayer_authority():
-		if event.is_action_pressed("test"):
-			test.rpc_id(1)
 
 
 @rpc("unreliable_ordered")
@@ -114,17 +113,20 @@ func setup(player_data: Game.PlayerData):
 	Debug.dprint(player_data.role, 30)
 	if(player_data.role== Game.Role.ROLE_B):
 		canDash=true
+	if(player_data.role == Game.Role.ROLE_C):
+		canPick= true
 
 @rpc
 func test():
 #	if is_multiplayer_authority():
 	Debug.dprint("test - player: %s" % name, 30)
 	
-@rpc("call_local","reliable")
+@rpc("reliable")
 func skill():
 	pass
-	
 
+func sign_drop():
+	pass
 
 func _on_timer_timeout():
 	canDash=true

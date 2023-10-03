@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxs3okw5opytd"]
+[gd_scene load_steps=5 format=3 uid="uid://dxs3okw5opytd"]
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_21bhx"]
 [ext_resource type="Script" path="res://scenes/players/playerC.gd" id="2_ogs32"]
@@ -6,8 +6,25 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcfwt"]
 load_path = "res://.godot/imported/DinoSprites - tard.png-c4ef7fb11e3bc95260cf761e719d8d3c.ctex"
 
-[node name="Player" instance=ExtResource("1_21bhx")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_q87ww"]
+
+[node name="Player" groups=["playerC"] instance=ExtResource("1_21bhx")]
 script = ExtResource("2_ogs32")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_pcfwt")
+
+[node name="Marker2D" type="Marker2D" parent="." index="4"]
+position = Vector2(0, -9)
+
+[node name="drop_zone" type="Marker2D" parent="." index="5"]
+position = Vector2(16, -1)
+
+[node name="Area2D" type="Area2D" parent="drop_zone" index="0"]
+light_mask = 16
+visibility_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drop_zone/Area2D" index="0"]
+light_mask = 16
+visibility_layer = 16
+shape = SubResource("CircleShape2D_q87ww")
