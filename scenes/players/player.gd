@@ -7,7 +7,6 @@ var acceleration = 3000
 var gravity = 900
 @export var max_jump = 1
 var jumps = 0
-var direction = 1
 
 
 var lastDir = 1
@@ -51,6 +50,7 @@ func _physics_process(delta: float) -> void:
 				jumps = 0
 			if abs(velocity.x) > 10 or move_input:
 				walk_animation.rpc()
+
 			else:
 				idle_animation.rpc()
 				
@@ -121,10 +121,11 @@ func test():
 #	if is_multiplayer_authority():
 	Debug.dprint("test - player: %s" % name, 30)
 	
-@rpc("reliable")
+@rpc("reliable","call_local")
 func skill():
 	pass
 
+@rpc("call_remote")
 func sign_drop():
 	pass
 

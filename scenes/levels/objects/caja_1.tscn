@@ -9,7 +9,7 @@
 size = Vector2(24, 24)
 
 [node name="Caja1" type="RigidBody2D" groups=["objects"]]
-gravity_scale = 0.2
+gravity_scale = 0.1
 lock_rotation = true
 script = ExtResource("1_djlld")
 
