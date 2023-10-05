@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://drx82vd4ygite"]
+[gd_scene load_steps=6 format=3 uid="uid://drx82vd4ygite"]
 
 [ext_resource type="Script" path="res://scripts/objects/caja_1.gd" id="1_djlld"]
 [ext_resource type="Texture2D" uid="uid://behgt85d8ppcr" path="res://assets/Pixel Adventure/Items/Boxes/Box3/Idle.png" id="2_iql8e"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4b0vf"]
+properties/0/path = NodePath(".:picked")
+properties/0/spawn = true
+properties/0/sync = false
+properties/0/watch = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_168wb"]
 
@@ -11,7 +17,11 @@ size = Vector2(24, 24)
 [node name="Caja1" type="RigidBody2D" groups=["objects"]]
 gravity_scale = 0.1
 lock_rotation = true
+freeze_mode = 1
 script = ExtResource("1_djlld")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_4b0vf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

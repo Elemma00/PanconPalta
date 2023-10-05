@@ -14,8 +14,10 @@ script = ExtResource("2_ogs32")
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_pcfwt")
 
-[node name="Marker2D" type="Marker2D" parent="." index="4"]
-position = Vector2(0, -9)
+[node name="Marker2D" type="RemoteTransform2D" parent="." index="4"]
+position = Vector2(0, -21)
+update_rotation = false
+update_scale = false
 
 [node name="drop_zone" type="Marker2D" parent="." index="5"]
 position = Vector2(16, -1)
