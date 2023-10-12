@@ -1,7 +1,11 @@
 extends Line2D
 
 @onready var aim: Node2D = $"../Aim"
+@onready var horizontal: Line2D = $"../Aim/Horizontal"
+@onready var vertical: Line2D = $"../Aim/Vertical"
+
 @onready var player: CharacterBody2D = $".."
+@onready var timer: Timer = $"../Timer"
 
 var destination: Vector2
 var isRopeCreated: bool = false
@@ -42,8 +46,14 @@ func create_rope(destination: Vector2):
 	query.exclude = [self, player, aim]
 	var result = space_state.intersect_ray(query)
 	
-	if !result.is_empty():
-		destination = result.position
+	if result.is_empty():
+		horizontal.default_color = Color(1, 0, 0)
+		vertical.default_color = Color(1, 0, 0)
+		aim.rotate(-0.785)
+		timer.start()
+		return
+	
+	destination = result.position
 	
 	self.destination = destination
 	self.add_point(to_local(self.destination))
@@ -67,3 +77,10 @@ func _on_area_body_entered(body: Node2D) -> void:
 		return
 	
 	body.global_position = destination
+
+
+func _on_timer_timeout() -> void:
+	horizontal.default_color = Color(1, 1, 1)
+	vertical.default_color = Color(1, 1, 1)
+	aim.rotate(0.785)
+
