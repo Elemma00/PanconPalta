@@ -16,6 +16,7 @@ script = ExtResource("2_brj3n")
 
 [node name="Cuerda" type="Line2D" parent="." index="0"]
 width = 3.0
+end_cap_mode = 2
 script = ExtResource("3_a2umj")
 
 [node name="Area" type="Area2D" parent="Cuerda" index="0"]
