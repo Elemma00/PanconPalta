@@ -36,6 +36,15 @@ func _update_rope():
 
 @rpc("call_local","reliable")
 func create_rope(destination: Vector2):
+	var space_state = get_world_2d().direct_space_state
+	# use global coordinates, not local to node
+	var query = PhysicsRayQueryParameters2D.create(self.global_position, destination)
+	query.exclude = [self, player, aim]
+	var result = space_state.intersect_ray(query)
+	
+	if !result.is_empty():
+		destination = result.position
+	
 	self.destination = destination
 	self.add_point(to_local(self.destination))
 	self.isRopeCreated = true
