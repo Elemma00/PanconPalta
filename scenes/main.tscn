@@ -21,9 +21,9 @@ offset_bottom = 144.0
 texture = ExtResource("5_cc15p")
 stretch_mode = 1
 
-[node name="Players" type="Node2D" parent="."]
-
 [node name="base_level" parent="." instance=ExtResource("5_rw1xx")]
+
+[node name="Players" type="Node2D" parent="."]
 
 [node name="Spawn" type="Node2D" parent="."]
 
