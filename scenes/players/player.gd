@@ -8,7 +8,6 @@ var gravity = 900
 @export var max_jump = 1
 var jumps = 0
 
-
 var lastDir = 1
 var isDashing = false
 var canDash = false
@@ -30,20 +29,22 @@ func _physics_process(delta: float) -> void:
 		var dash_input= Input.is_action_just_pressed("Dash")
 		var move_input = Input.get_axis("move_left", "move_right")
 				
-		if isDashing==false:
-			if Input.is_action_just_pressed("move_left"):
+		
+		if Input.is_action_just_pressed("move_left"):
+			if canDash:
 				lastDir=-1
-				sign_drop.rpc()
-			if Input.is_action_just_pressed("move_right"):
+			sign_drop.rpc()
+		if Input.is_action_just_pressed("move_right"):
+			if canDash:
 				lastDir=1
-				sign_drop.rpc()
+			sign_drop.rpc()
 			
 		if dash_input:
 			dash.rpc()
 			
 		if isDashing and $Timer.time_left > 0.1:
 				velocity.y = 0
-				velocity.x = lastDir * 500
+				velocity.x = lastDir* 500
 				
 		if is_on_floor():
 			if jumps != 0:
