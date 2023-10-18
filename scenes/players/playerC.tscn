@@ -2,13 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_21bhx"]
 [ext_resource type="Script" path="res://scenes/players/playerC.gd" id="2_ogs32"]
-[ext_resource type="Texture2D" uid="uid://p1w61qttpon4" path="res://icon.svg" id="3_hb7w0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcfwt"]
 load_path = "res://.godot/imported/DinoSprites - tard.png-c4ef7fb11e3bc95260cf761e719d8d3c.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4mqx"]
+size = Vector2(20, 5.5)
+
 [node name="Player" groups=["playerC"] instance=ExtResource("1_21bhx")]
 script = ExtResource("2_ogs32")
+isHolding = false
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_pcfwt")
@@ -21,6 +24,11 @@ update_scale = false
 [node name="DropZone" type="RemoteTransform2D" parent="." index="5"]
 position = Vector2(15, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="DropZone" index="0"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_hb7w0")
+[node name="Direccion" type="Marker2D" parent="." index="6"]
+position = Vector2(15, 1)
+
+[node name="Pick_area" type="Area2D" parent="Direccion" index="0"]
+
+[node name="shape" type="CollisionShape2D" parent="Direccion/Pick_area" index="0"]
+position = Vector2(-9, 7)
+shape = SubResource("RectangleShape2D_n4mqx")
