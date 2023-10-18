@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp7ggcb5wrfa2"]
+[gd_scene load_steps=14 format=3 uid="uid://dp7ggcb5wrfa2"]
 
 [ext_resource type="Texture2D" uid="uid://bi0ylkvjpiinh" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_7rek0"]
-[ext_resource type="PackedScene" uid="uid://c2v6nyiovmrt1" path="res://scenes/levels/objects/caja_2.tscn" id="2_3i18i"]
+[ext_resource type="PackedScene" path="res://scenes/levels/objects/caja_2.tscn" id="2_3i18i"]
+[ext_resource type="Script" path="res://scenes/levels/Goal.gd" id="3_yjb43"]
+[ext_resource type="PackedScene" uid="uid://c70mgbaacoyi" path="res://scenes/ui/Win.tscn" id="4_8gfld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km63u"]
 size = Vector2(18.7891, 61)
@@ -27,6 +29,9 @@ b = Vector2(0, 144)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tqed4"]
 a = Vector2(-4, 0)
 b = Vector2(108, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fhnp"]
+size = Vector2(69, 18)
 
 [node name="base_level" type="Node2D"]
 
@@ -560,3 +565,21 @@ position = Vector2(134, 125)
 
 [node name="Caja2" parent="." instance=ExtResource("2_3i18i")]
 position = Vector2(127, 137)
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(239, 76)
+script = ExtResource("3_yjb43")
+win_scene = ExtResource("4_8gfld")
+
+[node name="Polygon2D" type="Polygon2D" parent="Goal"]
+position = Vector2(-19.5, -57)
+scale = Vector2(6.9, 1)
+color = Color(0.278431, 0.137255, 0.0352941, 1)
+polygon = PackedVector2Array(-5, -9, 5, -9, 5, 9, -5, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(-19.5, -57)
+shape = SubResource("RectangleShape2D_5fhnp")
+
+[connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]
+[connection signal="body_exited" from="Goal" to="Goal" method="_on_body_exited"]

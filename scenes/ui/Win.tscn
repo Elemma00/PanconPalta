@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c70mgbaacoyi"]
+
+[ext_resource type="FontFile" uid="uid://e4uw7o5qcr8a" path="res://assets/fonts/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="1_0pom1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_unewv"]
+font = ExtResource("1_0pom1")
+font_size = 100
+font_color = Color(0.352941, 1, 0.341176, 1)
+outline_size = 10
+shadow_size = 25
+shadow_color = Color(0, 0, 0, 0.988235)
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+text = "WIN"
+label_settings = SubResource("LabelSettings_unewv")
+horizontal_alignment = 1
+vertical_alignment = 1
