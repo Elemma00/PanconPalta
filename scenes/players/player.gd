@@ -9,6 +9,7 @@ var gravity = 900
 var jumps = 0
 
 var lastDir = 1
+var dropDir = 1
 var isDashing = false
 var canDash = false
 var canPick = false
@@ -29,15 +30,16 @@ func _physics_process(delta: float) -> void:
 		var dash_input= Input.is_action_just_pressed("Dash")
 		var move_input = Input.get_axis("move_left", "move_right")
 				
-		
 		if Input.is_action_just_pressed("move_left"):
 			if canDash:
 				lastDir=-1
-			sign_drop.rpc()
+			dropDir=-1
+			sign_drop.rpc(dropDir)
 		if Input.is_action_just_pressed("move_right"):
 			if canDash:
 				lastDir=1
-			sign_drop.rpc()
+			dropDir=1
+			sign_drop.rpc(dropDir)
 			
 		if dash_input:
 			dash.rpc()
@@ -115,7 +117,7 @@ func setup(player_data: Game.PlayerData):
 	if(player_data.role== Game.Role.ROLE_B):
 		canDash=true
 	if(player_data.role == Game.Role.ROLE_C):
-		canPick= true
+		canPick=true
 
 @rpc
 func test():
@@ -126,9 +128,10 @@ func test():
 func skill():
 	pass
 
-@rpc("call_remote")
-func sign_drop():
+@rpc("call_local","reliable")
+func sign_drop(value):
 	pass
+	
 
 func _on_timer_timeout():
 	canDash=true

@@ -1,14 +1,12 @@
 extends Player
 
-@onready var drop_zone = $DropZone
 @onready var marker_2d = $Marker2D
+@onready var drop_zone = $DropZone
 
-@rpc("call_local","reliable","any_peer")
-func sign_drop():
-	Debug.dprint("sign drop")
-	var lastposition = drop_zone.position.x 
-	drop_zone.scale.x * lastDir
-	
+@rpc("call_local","reliable")
+func sign_drop(value):
+	drop_zone.position.x = value * 15
+	Debug.dprint(value)
 
 @rpc("call_local","reliable","any_peer")
 func setremotepath(value):

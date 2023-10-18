@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dp7ggcb5wrfa2"]
 
 [ext_resource type="Texture2D" uid="uid://bi0ylkvjpiinh" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_7rek0"]
-[ext_resource type="PackedScene" uid="uid://drx82vd4ygite" path="res://scenes/levels/objects/caja_1.tscn" id="2_6xnc7"]
+[ext_resource type="PackedScene" uid="uid://c2v6nyiovmrt1" path="res://scenes/levels/objects/caja_2.tscn" id="2_3i18i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km63u"]
 size = Vector2(18.7891, 61)
@@ -555,5 +555,8 @@ position = Vector2(-180, 143.28)
 scale = Vector2(1, 0.5)
 shape = SubResource("SegmentShape2D_tqed4")
 
-[node name="Caja1" parent="." instance=ExtResource("2_6xnc7")]
-position = Vector2(128, 136)
+[node name="Caja3" parent="." instance=ExtResource("2_3i18i")]
+position = Vector2(134, 125)
+
+[node name="Caja2" parent="." instance=ExtResource("2_3i18i")]
+position = Vector2(127, 137)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxs3okw5opytd"]
+[gd_scene load_steps=5 format=3 uid="uid://dxs3okw5opytd"]
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_21bhx"]
 [ext_resource type="Script" path="res://scenes/players/playerC.gd" id="2_ogs32"]
+[ext_resource type="Texture2D" uid="uid://p1w61qttpon4" path="res://icon.svg" id="3_hb7w0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcfwt"]
 load_path = "res://.godot/imported/DinoSprites - tard.png-c4ef7fb11e3bc95260cf761e719d8d3c.ctex"
@@ -13,9 +14,13 @@ script = ExtResource("2_ogs32")
 texture = SubResource("CompressedTexture2D_pcfwt")
 
 [node name="Marker2D" type="RemoteTransform2D" parent="." index="4"]
-position = Vector2(0, -21)
+position = Vector2(0, -13)
 update_rotation = false
 update_scale = false
 
 [node name="DropZone" type="RemoteTransform2D" parent="." index="5"]
-position = Vector2(16, 5)
+position = Vector2(15, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="DropZone" index="0"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_hb7w0")

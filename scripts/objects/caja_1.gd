@@ -25,7 +25,8 @@ func _input(event):
 		request_pick.rpc_id(1,false)
 		playerC.canPick = true
 		playerC.setremotepath.rpc("")
-		apply_impulse(Vector2(),Vector2(90,-10))
+		playerC.setremotepathdrop.rpc(get_path())
+		playerC.setremotepathdrop.rpc("")
 
 	
 @rpc("reliable","any_peer","call_local")
