@@ -28,13 +28,13 @@ stretch_mode = 1
 [node name="Spawn" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Spawn"]
-position = Vector2(18, 71)
+position = Vector2(13, 82)
 
 [node name="Marker2D2" type="Marker2D" parent="Spawn"]
-position = Vector2(239, 72)
+position = Vector2(244, 82)
 
 [node name="Marker2D3" type="Marker2D" parent="Spawn"]
-position = Vector2(157, 73)
+position = Vector2(219, 108)
 
 [node name="Marker2D4" type="Marker2D" parent="Spawn"]
-position = Vector2(88, 47)
+position = Vector2(53, 119)
