@@ -8,7 +8,9 @@ extends Node2D
 @onready var spawn: Node2D = $Spawn
 
 
+
 func _ready() -> void:
+	MusicController.level1()
 	Game.sort_players()
 	for i in Game.players.size():
 		var player_data = Game.players[i]

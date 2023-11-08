@@ -14,6 +14,8 @@ var isDashing = false
 var canDash = false
 var canPick = false
 
+@onready var dash_sound = $dash
+@onready var jump_sound = $jump
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -92,6 +94,7 @@ func sign_sprite():
 
 @rpc("call_local","reliable")
 func jump():
+	jump_sound.play()
 	velocity.y = -jump_speed
 	
 @rpc("call_local","reliable")
@@ -105,6 +108,7 @@ func idle_animation():
 @rpc("call_local","reliable")
 func dash():
 	if canDash:
+		dash_sound.play()
 		$Timer.start()
 		canDash = false
 		isDashing = true

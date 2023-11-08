@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cqnyfee3fqmbg"
+path="res://.godot/imported/Ahoy! [fight].ogg-10a661c6816ae4799d87a02b007f85fe.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sounds/OST/Ahoy! [fight].ogg"
+dest_files=["res://.godot/imported/Ahoy! [fight].ogg-10a661c6816ae4799d87a02b007f85fe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

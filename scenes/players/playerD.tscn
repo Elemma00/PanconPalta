@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkqw0rr825ulp"]
+[gd_scene load_steps=8 format=3 uid="uid://bkqw0rr825ulp"]
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_eotdp"]
 [ext_resource type="Script" path="res://scenes/players/playerD.gd" id="2_brj3n"]
 [ext_resource type="Script" path="res://scenes/players/Linea.gd" id="3_a2umj"]
+[ext_resource type="AudioStream" uid="uid://c82a30x1ve6b2" path="res://assets/Sounds/SFX/Jumps/sound1.mp3" id="4_0eh83"]
+[ext_resource type="AudioStream" uid="uid://vl7xwp5v3ti0" path="res://assets/Sounds/SFX/rope.mp3" id="5_ujoc1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mpdqq"]
 radius = 8.0
@@ -42,6 +44,15 @@ texture = SubResource("CompressedTexture2D_n5kuf")
 process_callback = 0
 wait_time = 0.7
 one_shot = true
+
+[node name="jump" parent="." index="8"]
+stream = ExtResource("4_0eh83")
+
+[node name="rope" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("5_ujoc1")
+volume_db = 5.0
+pitch_scale = 1.7
+bus = &"SFX"
 
 [connection signal="body_entered" from="Cuerda/Area" to="Cuerda" method="_on_area_body_entered"]
 [connection signal="timeout" from="Timer" to="Cuerda" method="_on_timer_timeout"]

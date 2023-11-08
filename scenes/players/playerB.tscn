@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://btwdh7rmfxu5w"]
+[gd_scene load_steps=5 format=3 uid="uid://btwdh7rmfxu5w"]
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_7dat7"]
+[ext_resource type="AudioStream" uid="uid://c8qdc3l7l0cv7" path="res://assets/Sounds/SFX/dash.mp3" id="2_8o81t"]
+[ext_resource type="AudioStream" uid="uid://vfjrfubq08t2" path="res://assets/Sounds/SFX/Jumps/sound2.mp3" id="2_s4bhn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dl66w"]
 load_path = "res://.godot/imported/DinoSprites - doux.png-fed2a44b7d8d5a65c7f5d42dc973790c.ctex"
@@ -14,5 +16,14 @@ texture = SubResource("CompressedTexture2D_dl66w")
 process_callback = 0
 wait_time = 0.2
 one_shot = true
+
+[node name="dash" type="AudioStreamPlayer2D" parent="." index="6"]
+stream = ExtResource("2_8o81t")
+volume_db = -0.465
+attenuation = 2.54912
+bus = &"SFX"
+
+[node name="jump" parent="." index="7"]
+stream = ExtResource("2_s4bhn")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

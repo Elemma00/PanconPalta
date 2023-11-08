@@ -4,6 +4,8 @@ extends Player
 @onready var drop_zone = $DropZone
 @onready var direccion = $Direccion
 @onready var pick_area = $Direccion/Pick_area
+@onready var pick_sound = $pick
+@onready var drop_sound = $drop
 
 @export var isHolding = false:
 	set(value):
@@ -26,6 +28,14 @@ func setremotepath(value):
 @rpc("call_local","reliable","any_peer")
 func setremotepathdrop(value):
 	drop_zone.remote_path = value
+	
+@rpc("call_local","reliable")
+func pick_sfx():
+	pick_sound.play()
+	
+@rpc("call_local","reliable")
+func drop_sfx():
+	drop_sound.play()
 
 func _process(delta: float) -> void:
 	if is_multiplayer_authority():
@@ -37,6 +47,7 @@ func _process(delta: float) -> void:
 					setremotepath.rpc(body.get_path())
 					body.collision_enabled = false
 					body.request_collision.rpc(1,false)
+					pick_sfx.rpc()
 					isHolding = true
 					
 		elif Input.is_action_just_pressed("drop") and isHolding == true:
@@ -47,5 +58,6 @@ func _process(delta: float) -> void:
 					setremotepath.rpc("")
 					setremotepathdrop.rpc(caja_cargada.get_path())
 					setremotepathdrop.rpc("")
+					drop_sfx.rpc()
 					isHolding = false
 				

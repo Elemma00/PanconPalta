@@ -7,6 +7,9 @@ extends Line2D
 @onready var player: CharacterBody2D = $".."
 @onready var timer: Timer = $"../Timer"
 
+@onready var rope_sound = $"../rope"
+
+
 var destination: Vector2
 var isRopeCreated: bool = false
 
@@ -54,10 +57,10 @@ func create_rope(destination: Vector2):
 		return
 	
 	destination = result.position
-	
 	self.destination = destination
 	self.add_point(to_local(self.destination))
 	self.isRopeCreated = true
+	rope_sound.play()
 
 
 @rpc("call_local","reliable")

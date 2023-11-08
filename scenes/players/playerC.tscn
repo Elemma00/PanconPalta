@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxs3okw5opytd"]
+[gd_scene load_steps=8 format=3 uid="uid://dxs3okw5opytd"]
 
 [ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/players/player.tscn" id="1_21bhx"]
 [ext_resource type="Script" path="res://scenes/players/playerC.gd" id="2_ogs32"]
+[ext_resource type="AudioStream" uid="uid://b2224u2qgg522" path="res://assets/Sounds/SFX/Jumps/sound3.mp3" id="3_5qkuf"]
+[ext_resource type="AudioStream" uid="uid://f063dlughc4m" path="res://assets/Sounds/SFX/drop.mp3" id="4_wp7x1"]
+[ext_resource type="AudioStream" uid="uid://vfjrfubq08t2" path="res://assets/Sounds/SFX/Jumps/sound2.mp3" id="5_2voqb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcfwt"]
 load_path = "res://.godot/imported/DinoSprites - tard.png-c4ef7fb11e3bc95260cf761e719d8d3c.ctex"
@@ -32,3 +35,16 @@ position = Vector2(15, 1)
 [node name="shape" type="CollisionShape2D" parent="Direccion/Pick_area" index="0"]
 position = Vector2(-9, 7)
 shape = SubResource("RectangleShape2D_n4mqx")
+
+[node name="jump" parent="." index="8"]
+stream = ExtResource("3_5qkuf")
+
+[node name="drop" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("4_wp7x1")
+volume_db = -5.0
+pitch_scale = 1.52
+
+[node name="pick" type="AudioStreamPlayer2D" parent="." index="10"]
+stream = ExtResource("5_2voqb")
+pitch_scale = 2.79
+bus = &"SFX"

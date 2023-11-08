@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3mhsy021dqog"]
+[gd_scene load_steps=14 format=3 uid="uid://b3mhsy021dqog"]
 
 [ext_resource type="Script" path="res://scenes/players/player.gd" id="1_60vud"]
 [ext_resource type="Texture2D" uid="uid://cfv7fry010dml" path="res://assets/Dinos/DinoSprites - doux.png" id="2_2pqqi"]
+[ext_resource type="AudioStream" uid="uid://7ptpa50hlo6f" path="res://assets/Sounds/SFX/Jumps/sound7.mp3" id="3_f6ruu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2jkn"]
 radius = 4.0
@@ -90,3 +91,8 @@ tree_root = SubResource("AnimationNodeStateMachine_q1y2m")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="Spawn" type="Marker2D" parent="."]
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_f6ruu")
+attenuation = 6.0
+bus = &"SFX"

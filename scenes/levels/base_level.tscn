@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bi0ylkvjpiinh" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_7rek0"]
 [ext_resource type="PackedScene" uid="uid://c2v6nyiovmrt1" path="res://scenes/levels/objects/caja_2.tscn" id="2_3i18i"]
 [ext_resource type="Script" path="res://scenes/levels/Goal.gd" id="3_yjb43"]
-[ext_resource type="PackedScene" uid="uid://c70mgbaacoyi" path="res://scenes/ui/Win.tscn" id="4_8gfld"]
+[ext_resource type="PackedScene" uid="uid://ctrl1mpvskqer" path="res://scenes/ui/Win.tscn" id="4_8gfld"]
 [ext_resource type="PackedScene" uid="uid://tcfj3grw45x2" path="res://scenes/traps/Espinas.tscn" id="5_futhq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km63u"]
