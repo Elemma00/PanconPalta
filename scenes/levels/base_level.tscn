@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dp7ggcb5wrfa2"]
 
-[ext_resource type="Texture2D" uid="uid://bi0ylkvjpiinh" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_7rek0"]
+[ext_resource type="Texture2D" uid="uid://bi0ylkvjpiinh" path="res://assets/Pixel Adventure/Terrain/Terrain.png" id="1_nlhj1"]
 [ext_resource type="PackedScene" uid="uid://c2v6nyiovmrt1" path="res://scenes/levels/objects/caja_2.tscn" id="2_3i18i"]
 [ext_resource type="Script" path="res://scenes/levels/Goal.gd" id="3_yjb43"]
 [ext_resource type="PackedScene" uid="uid://ctrl1mpvskqer" path="res://scenes/ui/Win.tscn" id="4_8gfld"]
@@ -51,7 +51,7 @@ position = Vector2(-1.25, 36.25)
 [node name="Sprite2D" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(0, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 region_enabled = true
 region_rect = Rect2(98, 2, 44, 44)
@@ -59,7 +59,7 @@ region_rect = Rect2(98, 2, 44, 44)
 [node name="Sprite2D2" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(18, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -68,7 +68,7 @@ region_rect = Rect2(98, 2, 44, 44)
 [node name="Sprite2D3" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(0, 101)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -77,7 +77,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D4" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(18, 101)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -86,7 +86,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D5" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(0, 113)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -95,7 +95,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D6" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(18, 113)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -104,7 +104,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D7" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(0, 125)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -113,7 +113,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D8" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(18, 125)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -122,7 +122,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D9" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(0, 137)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -131,7 +131,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D10" type="Sprite2D" parent="Left/FirstFloor/Sprites"]
 position = Vector2(18, 137)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -151,7 +151,7 @@ position = Vector2(36, 31)
 [node name="Sprite2D" type="Sprite2D" parent="Left/SecondFloor/Sprites"]
 position = Vector2(0, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 region_enabled = true
 region_rect = Rect2(98, 2, 44, 44)
@@ -159,7 +159,7 @@ region_rect = Rect2(98, 2, 44, 44)
 [node name="Sprite2D3" type="Sprite2D" parent="Left/SecondFloor/Sprites"]
 position = Vector2(0, 101)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -178,7 +178,7 @@ position = Vector2(54, 43)
 [node name="Sprite2D" type="Sprite2D" parent="Left/ThirdFloor/Sprites"]
 position = Vector2(0, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 region_enabled = true
 region_rect = Rect2(98, 2, 44, 44)
@@ -200,7 +200,7 @@ position = Vector2(-36, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(0, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 region_enabled = true
 region_rect = Rect2(98, 2, 44, 44)
@@ -208,7 +208,7 @@ region_rect = Rect2(98, 2, 44, 44)
 [node name="Sprite2D2" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(18, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -217,7 +217,7 @@ region_rect = Rect2(98, 2, 44, 44)
 [node name="Sprite2D3" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(0, 101)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -226,7 +226,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D4" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(18, 101)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -235,7 +235,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D5" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(0, 113)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -244,7 +244,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D6" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(18, 113)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -253,7 +253,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D7" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(0, 125)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -262,7 +262,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D8" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(18, 125)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -271,7 +271,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D9" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(0, 137)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -280,7 +280,7 @@ region_rect = Rect2(98, 16, 44, 30)
 [node name="Sprite2D10" type="Sprite2D" parent="Right/FirstFloor/Sprites"]
 position = Vector2(18, 137)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -300,7 +300,7 @@ position = Vector2(-54, 31)
 [node name="Sprite2D" type="Sprite2D" parent="Right/SecondFloor/Sprites"]
 position = Vector2(0, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 region_enabled = true
 region_rect = Rect2(98, 2, 44, 44)
@@ -308,7 +308,7 @@ region_rect = Rect2(98, 2, 44, 44)
 [node name="Sprite2D3" type="Sprite2D" parent="Right/SecondFloor/Sprites"]
 position = Vector2(0, 101)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 flip_h = true
 region_enabled = true
@@ -327,7 +327,7 @@ position = Vector2(-72, 43)
 [node name="Sprite2D" type="Sprite2D" parent="Right/ThirdFloor/Sprites"]
 position = Vector2(0, 83)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 centered = false
 region_enabled = true
 region_rect = Rect2(98, 2, 44, 44)
@@ -348,14 +348,14 @@ position = Vector2(64, 3)
 [node name="Sprite2D" type="Sprite2D" parent="Middle/FirstDeck/Sprites"]
 position = Vector2(86, 84)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(193, 1, 40, 14)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Middle/FirstDeck/Sprites"]
 position = Vector2(102, 84)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(199, 1, 40, 14)
 
@@ -372,14 +372,14 @@ position = Vector2(81.25, 73.75)
 [node name="Sprite2D" type="Sprite2D" parent="Middle/SecondDeck/Sprites"]
 position = Vector2(-7.5, -1.90735e-06)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(193, 1, 40, 14)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Middle/SecondDeck/Sprites"]
 position = Vector2(7.5, -1.90735e-06)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(199, 1, 40, 14)
 
@@ -396,98 +396,98 @@ position = Vector2(37, -34)
 [node name="Sprite2D" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(215, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(197, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(206, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(188, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D5" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(179, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(170, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D7" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(161, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D8" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(152, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D9" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(143, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D10" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(134, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D11" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(125, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D12" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(116, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D13" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(107, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
 [node name="Sprite2D14" type="Sprite2D" parent="Middle/TopDeck/Sprites"]
 position = Vector2(98, 66)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(209, 17, 30, 30)
 
@@ -521,63 +521,63 @@ position = Vector2(256, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-190, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(273, 33, 42, 3)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-171.25, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-154.75, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-138.235, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 
 [node name="Sprite2D5" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-121.725, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-105.21, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 
 [node name="Sprite2D8" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-88, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 
 [node name="Sprite2D9" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-74, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 
 [node name="Sprite2D7" type="Sprite2D" parent="Boundries/Floor/Sprites"]
 position = Vector2(-65, 143)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rek0")
+texture = ExtResource("1_nlhj1")
 region_enabled = true
 region_rect = Rect2(279, 33, 35, 3)
 

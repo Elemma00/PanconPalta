@@ -19,6 +19,8 @@ var canPick = false
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var camera_2d: Camera2D = $Camera2D
+
 
 func _ready() -> void:
 	animation_tree.active = true
@@ -28,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if is_multiplayer_authority():
+	if is_multiplayer_authority():		
 		var dash_input= Input.is_action_just_pressed("Dash")
 		var move_input = Input.get_axis("move_left", "move_right")
 				
