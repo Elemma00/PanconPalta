@@ -1,16 +1,17 @@
 extends Area2D
 
 var players_in: Array[Player] = []
+var key: int = 0
 @export var win_scene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	get_parent().connect("llave_recogida", self, "_on_llave_recogida")
+	
+func _on_llave_recogida():
+	print("hola")
 func _process(delta: float) -> void:
-	if players_in.size() == 4:
+	if players_in.size() == 4 and key == 1:
 		_win.rpc()
 
 
