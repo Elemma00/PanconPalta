@@ -2,8 +2,11 @@ extends Node
 
 @export var main_menu: PackedScene
 @export var credits: PackedScene
+@export var win: PackedScene
 
 @export var levels: Array[PackedScene]
+
+@onready var timer: Timer = $Timer
 
 var current_level = 0
 
@@ -38,3 +41,10 @@ func go_to_credits():
 
 func start_game():
 	go_to_level(0)
+
+
+func go_to_win():
+	if win:
+		get_tree().change_scene_to_packed(win)
+	else:
+		get_tree().change_scene_to_packed(main_menu)

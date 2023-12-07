@@ -22,6 +22,10 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	players_in.append(body)
 	
+	print("player entered to goal", players_in.size())
+	print("keys:  ", get_parent().contador_llaves, ";  total:   ", get_parent().keys_amount)
+	if players_in.size() == Game.players.size() and get_parent().contador_llaves == get_parent().keys_amount:
+		_win.rpc()
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -37,4 +41,5 @@ func _on_body_exited(body: Node2D) -> void:
 @rpc("call_local","reliable")
 func _win() -> void:
 	print("Win")
-	get_tree().change_scene_to_packed(win_scene)
+	# get_tree().change_scene_to_packed(win_scene)
+	LevelManager.go_to_win()

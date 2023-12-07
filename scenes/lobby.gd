@@ -235,8 +235,6 @@ func start_game() -> void:
 	MusicController.stop_music()
 	# get_tree().change_scene_to_file("res://scenes/main.tscn")
 	LevelManager.start_game()
-	
-
 
 
 func _check_ready() -> void:

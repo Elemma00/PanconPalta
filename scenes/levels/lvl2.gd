@@ -4,6 +4,7 @@ extends Node2D
 @export var playerB: PackedScene
 @export var playerC: PackedScene
 @export var playerD: PackedScene
+@export var keys_amount: int = 1
 @onready var players: Node2D = $Players
 @onready var spawn: Node2D = $Spawn
 @onready var camera_2d: Camera2D = $Camera2D
