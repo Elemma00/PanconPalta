@@ -1,7 +1,6 @@
 extends MarginContainer
 
 @export var lobby_scene:PackedScene
-@export var credits_scene:PackedScene
 
 
 func _ready():
@@ -12,7 +11,7 @@ func _on_start_pressed():
 	
 
 func _on_credits_pressed():
-	get_tree().change_scene_to_packed(credits_scene)
+	pass # Replace with function body.
 
 
 func _on_settings_pressed():
