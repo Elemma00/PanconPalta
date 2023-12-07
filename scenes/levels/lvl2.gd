@@ -51,6 +51,3 @@ func _ready():
 			player.update_camera(self.camera_2d)
 			player.setup(player_data)
 			player.global_position = spawn.get_child(i).global_position
-
-
-

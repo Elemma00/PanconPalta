@@ -8,7 +8,6 @@
 load_path = "res://.godot/imported/DinoSprites - doux.png-fed2a44b7d8d5a65c7f5d42dc973790c.ctex"
 
 [node name="Player" instance=ExtResource("1_7dat7")]
-max_jump = null
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_dl66w")
