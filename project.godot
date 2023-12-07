@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Debug="*res://scripts/debug.gd"
 Game="*res://scripts/game.gd"
 MusicController="*res://autoloads/MusicController.tscn"
+LevelManager="*res://autoloads/LevelManager.tscn"
 
 [display]
 
