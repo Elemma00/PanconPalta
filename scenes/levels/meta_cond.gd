@@ -2,7 +2,6 @@ extends Area2D
 
 var players_in: Array[Player] = []
 var key
-@export var win_scene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
