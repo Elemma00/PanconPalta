@@ -30,7 +30,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if is_multiplayer_authority():		
+	if is_multiplayer_authority():
+		self.camera_2d.global_position = self.global_position
 		var dash_input= Input.is_action_just_pressed("Dash")
 		var move_input = Input.get_axis("move_left", "move_right")
 				
@@ -137,7 +138,10 @@ func skill():
 @rpc("call_local","reliable")
 func sign_drop(value):
 	pass
-	
 
 func _on_timer_timeout():
 	canDash=true
+
+func update_camera(new_camera: Camera2D):
+	if is_multiplayer_authority:
+		self.camera_2d = new_camera

@@ -96,3 +96,6 @@ anim_player = NodePath("../AnimationPlayer")
 stream = ExtResource("3_f6ruu")
 attenuation = 6.0
 bus = &"SFX"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0

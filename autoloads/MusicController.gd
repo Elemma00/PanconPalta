@@ -7,14 +7,14 @@ var how = load("res://assets/Sounds/OST/Fish Bucket [character screen].mp3")
 
 func play_music():
 	$Music.stream = title_music
-	$Music.play()
+	# $Music.play()
 
 func stop_music():
 	$Music.stop()
 
 func level1():
 	$Music.stream = level1_music
-	$Music.play()
+	# $Music.play()
 
 func play_credits():
 	$Music.stream = credits
