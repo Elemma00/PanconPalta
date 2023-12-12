@@ -1468,10 +1468,16 @@ position = Vector2(703, 287.5)
 shape = SubResource("RectangleShape2D_dqgmu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="key"]
+visible = false
 position = Vector2(703, 288)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_lg7og")
 frame_progress = 0.609751
+
+[node name="Sprite2D" type="Sprite2D" parent="key"]
+position = Vector2(703, 289)
+texture = ExtResource("14_xo7t2")
+hframes = 17
 
 [node name="Players" type="Node2D" parent="."]
 
