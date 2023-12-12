@@ -793,10 +793,6 @@ layer_0/tile_data = PackedInt32Array(1179648, 393216, 0, 1245184, 393216, 1, 131
 [node name="Espinas" parent="." instance=ExtResource("2_dnyqb")]
 position = Vector2(606, 297)
 
-[node name="Espinas2" parent="." instance=ExtResource("2_dnyqb")]
-position = Vector2(620, 251)
-rotation = 3.14159
-
 [node name="Caja2" parent="." instance=ExtResource("3_6s7f4")]
 position = Vector2(564, 279)
 
@@ -820,7 +816,7 @@ frame_progress = 0.139499
 offset_left = 288.0
 offset_top = 48.0
 offset_right = 400.0
-offset_bottom = 51.0
+offset_bottom = 52.0
 texture = ExtResource("12_ew4qb")
 expand_mode = 1
 stretch_mode = 1
