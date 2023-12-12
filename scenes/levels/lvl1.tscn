@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://fmru7y5n4pww"]
+[gd_scene load_steps=110 format=3 uid="uid://fmru7y5n4pww"]
 
 [ext_resource type="Texture2D" uid="uid://bi0ylkvjpiinh" path="res://assets/Pixel Adventure/Terrain/Terrain.png" id="1_l04vv"]
 [ext_resource type="Script" path="res://scenes/levels/lvl2.gd" id="1_lj02v"]
@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dxs3okw5opytd" path="res://scenes/players/playerC.tscn" id="4_2leau"]
 [ext_resource type="PackedScene" uid="uid://bkqw0rr825ulp" path="res://scenes/players/playerD.tscn" id="5_1ctd6"]
 [ext_resource type="Texture2D" uid="uid://dtqjn1q5soj85" path="res://assets/Pixel Adventure/Background/Gray.png" id="6_qhy1j"]
+[ext_resource type="Texture2D" uid="uid://yaw5us85bxa6" path="res://assets/Pixel Adventure/Background/Blue.png" id="7_vwdkh"]
+[ext_resource type="Texture2D" uid="uid://dlg8nm66lunaa" path="res://assets/Pixel Adventure/Background/Green.png" id="8_if04b"]
 [ext_resource type="PackedScene" uid="uid://c2v6nyiovmrt1" path="res://scenes/levels/objects/caja_2.tscn" id="9_ovbjo"]
+[ext_resource type="Texture2D" uid="uid://3hfnp2gbnkfe" path="res://assets/Pixel Adventure/Background/Yellow.png" id="9_uo753"]
+[ext_resource type="Texture2D" uid="uid://beda4owidt16l" path="res://assets/Pixel Adventure/Background/Pink.png" id="10_psygl"]
 [ext_resource type="Script" path="res://scenes/levels/meta_cond.gd" id="10_q3pwx"]
 [ext_resource type="Texture2D" uid="uid://d1v53yblqd8u" path="res://assets/Pixel Adventure/Items/Checkpoints/End/End (Pressed) (64x64).png" id="11_ycw5w"]
 [ext_resource type="Texture2D" uid="uid://bc5rmdipf752m" path="res://assets/Pixel Adventure/Items/Checkpoints/End/goal.png" id="12_cd0oe"]
@@ -1189,6 +1193,40 @@ metadata/_edit_horizontal_guides_ = [240.0, 223.0, 217.0]
 offset_right = 768.0
 offset_bottom = 240.0
 texture = ExtResource("6_qhy1j")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 161.0
+offset_bottom = 64.0
+texture = ExtResource("7_vwdkh")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 160.0
+offset_top = -1.0
+offset_right = 224.0
+offset_bottom = 64.0
+texture = ExtResource("8_if04b")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 240.0
+offset_top = 115.0
+offset_right = 301.0
+offset_bottom = 144.0
+texture = ExtResource("9_uo753")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 400.0
+offset_top = 35.0
+offset_right = 512.0
+offset_bottom = 64.0
+texture = ExtResource("10_psygl")
 expand_mode = 1
 stretch_mode = 1
 
