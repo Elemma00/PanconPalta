@@ -8,6 +8,9 @@ extends Node2D
 @onready var players: Node2D = $Players
 @onready var spawn: Node2D = $Spawn
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var caja_1: AnimatedSprite2D = $cajas/caja1
+@onready var caja_2: AnimatedSprite2D = $cajas/caja2
+@onready var mouse: AnimatedSprite2D = $cajas/mouse
 
 
 @export var contador_llaves = 0
