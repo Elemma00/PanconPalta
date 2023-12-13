@@ -40,7 +40,7 @@ func go_to_credits():
 
 
 func start_game():
-	go_to_level(1)
+	go_to_level(0)
 
 
 func go_to_win():

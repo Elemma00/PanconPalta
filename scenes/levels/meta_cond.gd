@@ -8,7 +8,8 @@ func _ready() -> void:
 	key = get_parent().contador_llaves
 
 func _process(delta: float) -> void:
-	pass
+	if players_in.size() == 4 and key == 1:
+		_win.rpc()
 
 
 func _on_body_entered(body: Node2D) -> void:
