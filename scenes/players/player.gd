@@ -14,7 +14,6 @@ var isDashing = false
 var canDash = false
 var canPick = false
 
-@onready var dash_sound = $dash
 @onready var jump_sound = $jump
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
@@ -111,7 +110,6 @@ func idle_animation():
 @rpc("call_local","reliable")
 func dash():
 	if canDash:
-		dash_sound.play()
 		$Timer.start()
 		canDash = false
 		isDashing = true

@@ -2,7 +2,8 @@ extends Area2D
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var asprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var icon: Sprite2D = $Sprite2D
+@onready var icon = $Sprite2D
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("players"):

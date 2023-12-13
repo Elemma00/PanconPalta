@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2v6nyiovmrt1"]
 
-[ext_resource type="Script" path="res://Caja2.gd" id="1_bvtd3"]
+[ext_resource type="Script" path="res://caja2.gd" id="1_bvtd3"]
 [ext_resource type="Texture2D" uid="uid://behgt85d8ppcr" path="res://assets/Pixel Adventure/Items/Boxes/Box3/Idle.png" id="2_v6hxw"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_x4gk6"]
