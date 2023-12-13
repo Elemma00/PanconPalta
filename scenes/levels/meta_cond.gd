@@ -41,4 +41,4 @@ func _on_body_exited(body: Node2D) -> void:
 func _win() -> void:
 	print("Win")
 	# get_tree().change_scene_to_packed(win_scene)
-	LevelManager.go_to_win()
+	LevelManager.next_level()
