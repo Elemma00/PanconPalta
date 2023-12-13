@@ -24,9 +24,9 @@ func incrementar_contador():
 func _ready():
 	MusicController.level1()
 	Game.sort_players()
-	caja_1.play("default")
-	caja_2.play("default")
-	mouse.play("default")
+	#caja_1.play("default")
+	#caja_2.play("default")
+	#mouse.play("default")
 	for i in Game.players.size():
 		var player_data = Game.players[i]
 		

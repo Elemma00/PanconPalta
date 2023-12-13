@@ -12,3 +12,4 @@ max_jump = 2
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_3bcsj")
+frame = 1
