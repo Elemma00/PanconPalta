@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr4dh2phwjah2"]
+
+[ext_resource type="Texture2D" uid="uid://bg22w0mcbpuvi" path="res://owo.jpg" id="1_8cyjw"]
+
+[sub_resource type="FontVariation" id="FontVariation_oyv7x"]
+
+[node name="Lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+texture = ExtResource("1_8cyjw")
+
+[node name="Continue" type="Button" parent="."]
+layout_mode = 2
+offset_left = 110.0
+offset_top = 100.0
+offset_right = 152.0
+offset_bottom = 116.0
+action_mode = 0
+text = "Continue
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_oyv7x")
+theme_override_font_sizes/font_size = 13
+text = "One of your Comanions had Failed"
+horizontal_alignment = 1
+vertical_alignment = 1
